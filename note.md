@@ -1,0 +1,3 @@
+* EchoService继承自Service,实现了Service中的callmethod方法,而这个方法正式调用我们要实现的虚函数Echo,在echo.pd.cc中可找到callMethod的实现.
+
+* EchoService是众多Service中的一个,需要注册到一个存储Service的结构中(一般用map),我们要通过客户端发来的某个字段确定要调用的Service,然后通过Service的callMethod调用正确的函数.当客户端发送打包好的调用数据来时,我们将数据进行解包等操作,取得Service,调用Service->callMethod.(从接收接包开始的代码自己实现),而callMethod最终调用的Echo方法,也是由自己在一开始的时候实现
